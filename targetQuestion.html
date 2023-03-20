@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Questions Parts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-400">
+    <section>
+      <div class="mx-4 md:mx-8 lg:mx-14 mt-5">
+        <div class="p-4 md:p-8 lg:p-10 shadow-xl rounded-lg bg-slate-300">
+          <h1 class="font-bold">
+            What is the difference between map, filter, forEach and find ?
+          </h1>
+          <br />
+          <p>
+            <span
+              class="font-semibold text-green-600 underline underline-offset-4"
+            >
+              forEach:</span
+            >
+            <br />
+            .forEach(), is used to execute the same code on every element in an
+            array but does not change the array and it returns undefined. <br />
+            let food = ['mango','rice','pepper','pear'];
+            food.forEach(function(foodItem) { <br />
+            console.log('I want to eat '+foodItem); });
+          </p>
+          <br />
+
+          <p>
+            <span
+              class="font-semibold text-green-600 underline underline-offset-4"
+            >
+              map():</span
+            >
+            <br />
+            .map() executes the same code on every element in an array and
+            returns a new array with the updated elements. <br />
+            let cost = [100,400,300,700]; <br />
+            let newCost = cost.map(function(costItem){ <br />
+            return costItem / 10; }); <br />
+            console.log(newCost);
+          </p>
+          <br />
+
+          <p>
+            <span
+              class="font-semibold text-green-600 underline underline-offset-4"
+              >filter():</span
+            >
+            <br />.filter() checks every element in an array to see if it meets
+            a certain criteria and returns a new array with the elements that
+            return truthy for the criteria. <br />
+            let cost = [100,400,50,40,700]; <br />
+            let smallCost = cost.filter(function(costItem){ <br />
+            return costItem < 200 }); <br />
+            console.log(smallCost);
+          </p>
+          <br />
+          <p>
+            <span
+              class="font-semibold text-green-600 underline underline-offset-4"
+              >.find()</span
+            >
+            <br />
+            Function .find() is also a search function like the previous but
+            they differ in one small detail — this function returns only one
+            match in an array. If in an array is more than one result, the
+            function will return the first that has matched.
+          </p>
+        </div>
+        <br /><br />
+        <div class="p-4 md:p-8 lg:p-10 shadow-xl rounded-lg bg-slate-300">
+          <h1 class="font-bold">
+            What is the difference between Local Storage, Session Storage and
+            Cookies ?
+          </h1>
+          <br />
+          <p>
+            <span class="font-semibold text-green-600">Local storage</span> is
+            the most recent mechanism. It allows for larger amounts of data to
+            be stored, but the data is not deleted when the browser is closed.
+            Local storage is useful for storing data that the user will need to
+            access later, such as offline data. <br />
+            localStorage.setItem('key', 'value');
+          </p>
+          <br />
+          <p>
+            <span class="font-semibold text-green-600">Session storage</span> is
+            similar to cookies, but the data is only stored for the current
+            session. This means that the data will be deleted when the user
+            closes the browser. Session storage is useful for storing data that
+            is sensitive, such as login credentials. <br />
+            sessionStorage.setItem("name", "tutorialsPoint");<br />
+            var name = sessionStorage.getItem("name");
+          </p>
+          <br />
+          <p>
+            <span class="font-semibold text-green-600"> Cookies</span> are the
+            oldest and most well-known mechanism. They are simple to use and
+            well supported by browsers. However, they are limited to 4KB of data
+            and are often used to store data that is not sensitive, such as user
+            preferences.
+            <br />
+            document.cookie = "name=tutorialsPoint";
+          </p>
+          <br />
+        </div>
+        <br />
+        <br />
+        <div class="p-4 md:p-8 lg:p-10 shadow-xl mb-10 rounded-lg bg-slate-300">
+          <h3 class="font-bold">What is eventLoop and how does it works?</h3>
+          <br />
+          <p>
+            The event loop is a crucial part of the JavaScript runtime that is
+            responsible for handling asynchronous events in a single-threaded
+            environment. It is the mechanism by which JavaScript code can
+            execute non-blocking I/O operations, such as reading or writing to a
+            file or making an HTTP request, without freezing the entire program.
+          </p>
+          <br />
+          <h1 class="font-semibold">
+            Here is a high-level overview of how the event loop works:
+          </h1>
+          <ol class="p-4">
+            <li>
+              <span class="font-bold">1.</span> The event loop constantly checks
+              for new events in the event queue. An event could be something
+              like a timer expiring, a network request completing, or a user
+              clicking a button.
+            </li>
+            <li>
+              <span class="font-bold">2.</span> When an event is detected, the
+              event loop will execute the associated callback function(s) and
+              remove the event from the queue.
+            </li>
+            <li>
+              <span class="font-bold"> 3.</span> If there are no events in the
+              queue, the event loop will wait until a new event is added.
+            </li>
+          </ol>
+        </div>
+        <br />
+
+        <div class="p-4 md:p-8 lg:p-10 shadow-xl mb-5 rounded-lg bg-slate-300">
+          <h1 class="font-bold">
+            Description of quizTimer and chooseQuiz function.
+          </h1>
+          <br />
+          <p class="font-semibold text-green-500 underline underline-offset-4">
+            quizTimer:
+          </p>
+          <br />
+          <p>
+            The function takes one parameter called
+            <span>"dismiss"</span>. If dismiss is true, the function clears the
+            timer and returns. Otherwise, the function sets up a timer that
+            updates the timer every second.Within the timer function, the code
+            calculates the number of minutes and seconds remaining based on a
+            count variable, which represents the number of seconds elapsed since
+            the timer started.Overall, this function can be used to create a
+            countdown timer with dynamic text color that can be dismissed by
+            passing in true as the dismiss parameter.
+          </p>
+          <br />
+          <p class="font-semibold text-green-600 underline underline-offset-4">
+            chooseQuiz:
+          </p>
+          <br />
+          <p>
+            This function called <span>"chooseQuiz"</span> that takes two
+            parameters: <span>"index"</span> and <span>"givenAns"</span> .f an
+            object with the same ID exists, it updates the givenAns property of
+            that object with the new answer provided in the givenAns
+            parameter.If the object with the same ID does not exist in the
+            answers array, it creates a new object with the quiz question's data
+            and the answer provided in the givenAns parameter and adds it to the
+            answers array.Finally, the function calls another function called
+            displayAnswers with the updated answers array to show the updated
+            list of quiz questions and their respective answers.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
